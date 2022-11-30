@@ -1,0 +1,28 @@
+[package]
+name = "tabs_mode"
+version = "0.1.0"
+authors = ["Michael Glas <michaelglas89@gmail.com>"]
+edition = "2021"
+
+[lib]
+name = "tabs"
+crate-type = ["cdylib", "rlib"]
+
+[build-dependencies]
+bindgen = "^0.59.2"
+pkg-config = "^0.3.24"
+
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive", "rc"] }
+serde_json = "^1.0"
+thiserror = "^1.0"
+lazy_static = "^1.4"
+fragile = "^1.1"
