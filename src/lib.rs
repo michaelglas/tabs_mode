@@ -394,7 +394,7 @@ pub unsafe extern "C" fn load(mode_: *mut bindings::mode) {
 }*/
 
 #[no_mangle]
-pub unsafe extern "C" fn exec(cmd: *const bindings::gchar) {
+pub unsafe extern "C" fn exec(cmd: *const c_char) {
     let mut stream = IpcStream::connect().unwrap();
 
     stream.write(Exec::new(format!("[con_id={}] focus", CStr::from_ptr(cmd).to_str().unwrap().to_owned()))).unwrap();
