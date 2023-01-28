@@ -88,7 +88,7 @@ fn main() {
         .unwrap();
 
     let gdk_pixbuf = pkg_config::Config::new()
-        .atleast_version("2.42.6")
+        .atleast_version("2.42.4")
         .probe("gdk-pixbuf-2.0")
         .unwrap();
 
