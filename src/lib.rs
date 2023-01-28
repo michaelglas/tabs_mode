@@ -2,7 +2,6 @@ use std::{os::{raw::*, unix::net::UnixStream}, env::var_os, io::Read, borrow::Bo
 use thiserror::Error;
 use std::io::Write;
 use serde::Deserialize;
-use fragile::Fragile;
 #[macro_use]
 extern crate lazy_static;
 
