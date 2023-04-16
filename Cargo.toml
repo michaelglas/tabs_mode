@@ -9,7 +9,7 @@ name = "tabs"
 crate-type = ["cdylib", "rlib"]
 
 [build-dependencies]
-bindgen = "^0.59"
+bindgen = "^0.64"
 pkg-config = "^0.3"
 
 [profile.release]
