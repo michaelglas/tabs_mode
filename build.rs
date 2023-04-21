@@ -73,9 +73,22 @@ impl<T: bindgen::callbacks::ParseCallbacks>  bindgen::callbacks::ParseCallbacks 
     ) -> Option<bindgen::callbacks::ImplementsTrait> {
         self.0.blocklisted_type_implements_trait(_name, _derive_trait)
     }
-    fn add_derives(&self, _name: &str) -> Vec<String> {
-        self.0.add_derives(_name)
+
+    fn generated_name_override(
+        &self,
+        item_info: bindgen::callbacks::ItemInfo<'_>,
+    ) -> Option<String> {
+        self.0.generated_name_override(item_info)
     }
+
+    fn add_derives(&self, info: &bindgen::callbacks::DeriveInfo<'_>) -> Vec<String> {
+        self.0.add_derives(info)
+    }
+
+    fn process_comment(&self, comment: &str) -> Option<String> {
+        self.0.process_comment(comment)
+    }
+
 }
 
 fn main() {
